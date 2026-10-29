@@ -9,7 +9,7 @@
 <meta property="og:title" content="Trade With Munaaf – Learning Community">
 <meta property="og:description" content="Learning &amp; educational sessions, market concepts, chart reading and case discussions. Join the community on Telegram.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b0f1a'/%3E%3Cpath d='M12 42l12-12 8 8 14-16' stroke='%2300e5a0' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b0f1a'/%3E%3Cpath d='M12 42l12-12 8 8 14-16' [%2E..%5D">
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <style>
   :root{
@@ -40,7 +40,6 @@
   a{color:inherit}
   .wrap{width:min(100% - 36px, 1000px);margin-inline:auto}
 
-  /* grid overlay */
   .grid-bg{
     position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
     background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
@@ -50,7 +49,6 @@
     -webkit-mask-image:radial-gradient(circle at 50% 20%,#000 0%,transparent 72%);
   }
 
-  /* header */
   header.site{
     position:sticky;top:0;z-index:40;
     backdrop-filter:blur(14px);
@@ -73,7 +71,6 @@
   }
   .nav-cta:hover{transform:translateY(-1px);background:rgba(0,229,160,.18)}
 
-  /* ticker */
   .ticker{
     border-top:1px solid var(--line);border-bottom:1px solid var(--line);
     overflow:hidden;background:rgba(255,255,255,.02);
@@ -81,9 +78,8 @@
   .ticker-track{display:flex;gap:38px;width:max-content;padding:8px 0;animation:slide 26s linear infinite}
   .tick{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--muted);white-space:nowrap}
   .up{color:var(--green)} .down{color:#ff6b81}
-  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)} }
 
-  /* hero */
   .hero{padding:58px 0 26px;text-align:center}
   .pill{
     display:inline-flex;align-items:center;gap:9px;
@@ -122,7 +118,6 @@
   }
   .sub{max-width:620px;margin:14px auto 0;color:var(--muted);font-size:clamp(14px,3.6vw,17px);line-height:1.7}
 
-  /* section label */
   .section-label{
     margin:40px 0 0;font-size:11.5px;font-weight:900;letter-spacing:.22em;text-transform:uppercase;
     color:rgba(0,229,160,.85);text-align:center;
@@ -132,7 +127,6 @@
     background:linear-gradient(90deg,transparent,rgba(0,229,160,.75),transparent);
   }
 
-  /* feature cards */
   .cards{
     display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;
     margin:26px 0 0;
@@ -157,7 +151,6 @@
   .card h3{margin:14px 0 6px;font-size:16px;font-weight:800;letter-spacing:-.01em}
   .card p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.65}
 
-  /* CTA */
   .cta-box{
     margin:30px auto 0;padding:32px 24px;border-radius:24px;max-width:720px;
     border:1px solid rgba(0,229,160,.22);
@@ -179,7 +172,6 @@
   .btn svg{width:22px;height:22px;flex:0 0 22px}
   .micro{margin:16px 0 0;font-size:12.5px;color:var(--muted);font-weight:600}
 
-  /* verified strip */
   .verified{
     display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:26px auto 0;
   }
@@ -191,7 +183,6 @@
   .chip.ok{border-color:rgba(0,229,160,.3);color:#9df7da}
   .chip svg{width:15px;height:15px;flex:0 0 15px}
 
-  /* quote */
   .quote{
     position:relative;max-width:760px;margin:46px auto 0;padding:30px 26px 26px;
     border:1px solid var(--line);border-radius:22px;
@@ -201,14 +192,12 @@
   .quote p{margin:8px 0 0;font-size:clamp(16px,4.2vw,21px);font-weight:700;line-height:1.6;letter-spacing:-.01em}
   .quote span{display:block;margin-top:12px;color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 
-  /* footer */
   footer{margin-top:52px;border-top:1px solid var(--line);padding:26px 0 34px;text-align:center}
   .links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px;font-size:13px;font-weight:700}
   .links a{color:var(--muted);text-decoration:none}
   .links a:hover{color:var(--green)}
   .legal{margin:14px auto 0;max-width:640px;color:#7b879b;font-size:11.5px;line-height:1.7}
 
-  /* toast */
   .toast{
     position:fixed;left:50%;bottom:26px;transform:translate(-50%,140%);
     padding:13px 20px;border-radius:14px;z-index:60;
@@ -218,7 +207,6 @@
   }
   .toast.show{transform:translate(-50%,0)}
 
-  /* reveal */
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
   .reveal.in{opacity:1;transform:none}
 
@@ -267,7 +255,6 @@
 
     <div class="avatar reveal">
       <div class="avatar-inner">
-        <!-- Replace profile.jpg in this repo with your own photo to swap the image -->
         <img id="profileImg" src="profile.jpg" alt="Trade With Munaaf" width="172" height="172" fetchpriority="high" decoding="async">
         <div id="avatarFallback" hidden>
           <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Portrait illustration">
@@ -302,6 +289,8 @@
     <h1 class="reveal">Trade with <span class="grad">Munaaf</span><br>Learning Community</h1>
     <p class="sub reveal">Learn the market step by step — with clear concepts, practical chart reading and real educational discussions. No hype, only learning.</p>
 
+    <p class="section-label reveal">What you get inside</p>
+
     <div class="cta-box reveal">
       <h2>Join our learning community</h2>
       <p>Become part of a focused group of learners and grow your market knowledge every single day.</p>
@@ -313,8 +302,6 @@
       </a>
       <p class="micro">Tap to open Telegram — no payment, no hidden steps.</p>
     </div>
-
-    <p class="section-label reveal">What you get inside</p>
 
     <div class="cards">
       <article class="card reveal">
@@ -345,11 +332,11 @@
         100% Verified Strategies
       </span>
       <span class="chip">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="2"/><path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="2"/><path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Free To Join
       </span>
       <span class="chip">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.5 19 6.5v5c0 4.8-2.9 8.1-7 9.9-4.1-1.8-7-5.1-7-9.9v-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.5 19 6.5v5c0 4.8-2.9 8.1-7 9.9-4.1-1.8-7-5.1-7-9.9v-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9.5 12.3 11.2 14l3.3-4.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Learning First Community
       </span>
     </div>
@@ -380,15 +367,13 @@
   <div style="width:min(100%,560px);max-height:80vh;overflow:auto;border:1px solid var(--line);border-radius:20px;background:#0b1018;padding:26px">
     <h3 id="modalTitle" style="margin:0 0 10px;font-size:20px;font-weight:900;letter-spacing:-.02em"></h3>
     <p id="modalBody" style="margin:0;color:var(--muted);font-size:14px;line-height:1.75"></p>
-    <button id="modalClose" style="margin-top:20px;padding:12px 20px;border:0;border-radius:12px;background:linear-gradient(180deg,#12f2ab,#00c98c);color:#03130d;font-weight:900;letter-spacing:.05em;cursor:pointer">CLOSE</button>
+    <button id="modalClose" style="margin-top:20px;padding:12px 20px;border:0;border-radius:12px;background:linear-gradient(180deg,#12f2ab,#00c98c);color:#03130d;font-weight:900;letter-spacing:.05em;cursor:pointer">Close</button>
   </div>
 </div>
 
 <script>
-  /* ---------- year ---------- */
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  /* ---------- image fallback (if profile.jpg is missing) ---------- */
   const profileImg = document.getElementById('profileImg');
   const fallback = document.getElementById('avatarFallback');
   profileImg.addEventListener('error', () => {
@@ -400,7 +385,6 @@
     fallback.hidden = false;
   }
 
-  /* ---------- ticker ---------- */
   const ticks = [
     ['BANKNIFTY', '+1.24%', 1], ['NIFTY 50', '+0.62%', 1], ['RELIANCE', '-0.41%', 0],
     ['HDFCBANK', '+0.88%', 1], ['TCS', '-0.19%', 0], ['INFY', '+1.05%', 1],
@@ -411,9 +395,8 @@
   const row = ticks.map(([n, v, up]) =>
     `<span class="tick"><strong>${n}</strong> <span class="${up ? 'up' : 'down'}">${up ? '▲' : '▼'} ${v}</span></span>`
   ).join('');
-  track.innerHTML = row + row; /* duplicated for a seamless loop */
+  track.innerHTML = row + row;
 
-  /* ---------- scroll reveal ---------- */
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
       if (e.isIntersecting) {
@@ -425,7 +408,6 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  /* ---------- toast on CTA click ---------- */
   const toast = document.getElementById('toast');
   let toastTimer;
   document.getElementById('joinBtn').addEventListener('click', () => {
@@ -435,11 +417,10 @@
     toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
   });
 
-  /* ---------- simple legal modals ---------- */
   const legal = {
-    terms: ['Terms of Use', 'By using this website you agree to use the material for personal learning only. Content may not be copied, resold or redistributed. We may update these terms at any time without prior notice.'],
+    terms: ['Terms of Use', 'By using this website you agree to use the material for personal learning only. Content may not be copied, resold or redistributed. We may update these terms at any time without notice.'],
     privacy: ['Privacy Policy', 'We do not collect or store personal data on this website. If you join our Telegram channel, that platform\'s own privacy policy applies to any information you share there.'],
-    disclaimer: ['Risk Disclaimer', 'Everything shared here is for education and awareness only. It is not investment advice or a buy/sell recommendation. Trading in markets carries a risk of loss — always do your own research and consult a licensed advisor.']
+    disclaimer: ['Risk Disclaimer', 'Everything shared here is for education and awareness only. It is not investment advice or a buy/sell recommendation. Trading in markets carries a risk of loss — only trade with capital you can afford to lose.']
   };
   const modal = document.getElementById('modal');
   document.querySelectorAll('[data-modal]').forEach(link => {
